@@ -141,6 +141,21 @@ h1.gallery-title-page {
 </head>
 
 <body>
+<audio src="bgmusic.mp3" autoplay loop></audio>
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+btn.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    btn.textContent = "🔊";
+  } else {
+    music.pause();
+    btn.textContent = "🔇";
+  }
+});
+</script>
 
 <div class="navbar">
     <div class="nav-item" data-link="index.html">WELCOME PAGE</div>
@@ -210,4 +225,5 @@ for(let i=0;i<numHearts;i++){
 
 </body>
 </html>
+
 
