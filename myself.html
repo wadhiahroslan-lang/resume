@@ -109,8 +109,25 @@ body {
 .cat-snow { position:fixed; top:-50px; pointer-events:none; z-index:9999; animation:swing 3s ease-in-out infinite alternate; }
 @keyframes swing { from {transform:translateX(-10px) rotate(-5deg);} to {transform:translateX(10px) rotate(5deg);} }
 
-@media (max-width: 900px) {
- 
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .navbar .nav-item {
+    font-size: 30px;
+    padding: 12px 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 0;
+  }
+
+}
+
     .side-container {
         flex-direction: column;
         gap: 20px;
@@ -261,3 +278,4 @@ document.getElementById('bgMusic').volume = 0.; // 50% volume
 </div>
 </body>
 </html>
+
