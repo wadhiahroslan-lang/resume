@@ -179,12 +179,15 @@ body {
 }
 @keyframes swing { from {transform:translateX(-10px) rotate(-5deg);} to {transform:translateX(10px) rotate(5deg);} }
 
-@media (max-width: 900px) {
-    .navbar {
-        justify-content: center;
-        gap: 8px;
-        padding: 10px;
-    }
+@media (max-width: 768px) {
+
+  .navbar { 
+   font-size: 30px;
+   flex-direction: column;
+ }
+  .header-img { 
+   height: 25vh;
+
 
     .navbar .nav-item {
         font-size: 16px; 
@@ -355,6 +358,7 @@ document.getElementById('bgMusic').volume = 0.5;
 </div>
 </body>
 </html>
+
 
 
 
