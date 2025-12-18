@@ -171,6 +171,21 @@ h1.travel-title {
 </head>
 
 <body>
+<audio src="bgmusic.mp3" autoplay loop></audio>
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+btn.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    btn.textContent = "🔊";
+  } else {
+    music.pause();
+    btn.textContent = "🔇";
+  }
+});
+</script>
 
 
 <div class="navbar">
@@ -239,3 +254,4 @@ for(let i=0;i<numPlanes;i++){
 
 </body>
 </html>
+
