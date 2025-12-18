@@ -97,14 +97,26 @@ body {
 </style>
 </head>
 <body>
+<audio src="bgmusic.mp3" autoplay loop></audio>
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+btn.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    btn.textContent = "🔊";
+  } else {
+    music.pause();
+    btn.textContent = "🔇";
+  }
+});
+</script>
 
 <div class="hero fade-in" id="hero">
     <button id="enterBtn">CLICK TO ENTER</button>
     <div id="datetime"></div>
 </div>
-
-
-<audio src="bgmusic.mp3" autoplay loop></audio>
 
 <script>
 document.addEventListener('contextmenu', e => e.preventDefault());
@@ -131,3 +143,4 @@ enterBtn.addEventListener('click', function() {
 
 </body>
 </html>
+
