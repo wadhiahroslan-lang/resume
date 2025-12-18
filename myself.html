@@ -161,7 +161,6 @@ body {
 <body>
 <div class="page-wrapper">
 
-<!-- Background music -->
 <audio id="bgMusic" src="bgmusic.mp3" autoplay loop></audio>
 
 <div class="navbar">
@@ -177,20 +176,20 @@ body {
 <img src="mycat.jpeg" class="header-img">
 <h1 class="page-title">ABOUT ME</h1>
 
-<!-- BIG PHOTOS 8 -->
+
 <div class="row-photos">
   <div class="big-photo-wrapper"><img src="bromo.jpeg" class="big-photo"><div class="big-photo-popup">Mount Bromo</div></div>
-  <div class="big-photo-wrapper"><img src="jakarta.jpg" class="big-photo"><div class="big-photo-popup">Jakarta</div></div>
+  <div class="big-photo-wrapper"><img src="jakarta.jpeg" class="big-photo"><div class="big-photo-popup">Jakarta</div></div>
   <div class="big-photo-wrapper"><img src="kimono.jpg" class="big-photo"><div class="big-photo-popup">Japan</div></div>
   <div class="big-photo-wrapper"><img src="brunei.jpg" class="big-photo"><div class="big-photo-popup">Brunei</div></div>
-  <div class="big-photo-wrapper"><img src="korea.jpg" class="big-photo"><div class="big-photo-popup">Korea</div></div>
+  <div class="big-photo-wrapper"><img src="korea.jpeg" class="big-photo"><div class="big-photo-popup">Korea</div></div>
   <div class="big-photo-wrapper"><img src="medan.jpg" class="big-photo"><div class="big-photo-popup">Medan</div></div>
-  <div class="big-photo-wrapper"><img src="batam.jpg" class="big-photo"><div class="big-photo-popup">Batam</div></div>
+  <div class="big-photo-wrapper"><img src="batam.jepg" class="big-photo"><div class="big-photo-popup">Batam</div></div>
   <div class="big-photo-wrapper"><img src="sg.jpg" class="big-photo"><div class="big-photo-popup">Singapore</div></div>
 </div>
 
 <div class="side-container">
-  <!-- VIDEO -->
+
   <div class="video-container">
     <h2>LIFE 2025 RECAP</h2>
     <video controls class="intro-video">
@@ -218,7 +217,7 @@ document.querySelectorAll('[data-link]').forEach(el=>{
   el.onclick=()=>location.href=el.dataset.link;
 });
 
-// Floating cats 🐈
+
 for(let i=0;i<10;i++){
   const cat=document.createElement('div');
   cat.className='cat-snow';
@@ -242,10 +241,11 @@ for(let i=0;i<10;i++){
   fall();
 }
 
-// Set volume for background music
-document.getElementById('bgMusic').volume = 0.; // 50% volume
+
+document.getElementById('bgMusic').volume = 0.5; 
 </script>
 
 </div>
 </body>
 </html>
+
