@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>EDUCATION</title>
 
-<!-- Fonts -->
 <link href="https://fonts.cdnfonts.com/css/bainsley" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/itccheltenham-lt-bookcond" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/distant-galaxy" rel="stylesheet">
@@ -199,7 +198,6 @@ body {
     transition: top linear;
 }
 
-/* ======= MOBILE RESPONSIVE ======= */
 @media (max-width: 768px) {
 
   .edu-grid, .my-skills-grid {
@@ -444,31 +442,28 @@ btn.addEventListener("click", () => {
     </table>
 </div>
 
-<script>
-function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({behavior:"smooth"});
-}
-
-<script>
-
-document.querySelectorAll('[data-link]').forEach(el => {
-    el.addEventListener('click', () => {
-        const link = el.getAttribute('data-link');
-        if(link) window.location.href = link;
+// Redirect nav-item biasa
+document.querySelectorAll('.nav-item').forEach(item => {
+  const link = item.getAttribute('data-link');
+  if(link && !item.classList.contains('dropdown')){
+    item.addEventListener('click', () => {
+      window.location.href = link;
     });
+  }
 });
 
-function scrollToSection(id) {
-    const section = document.getElementById(id);
-    section.scrollIntoView({ behavior: 'smooth' });
-}
-const eduDropdown = document.querySelector('.dropdown');
-eduDropdown.addEventListener('click', (e)=>{
-    if(e.target === eduDropdown) {
-        scrollToSection('education');
+// Scroll untuk dropdown section
+document.querySelectorAll('.dropdown-content a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('data-target');
+    if(targetId){
+      document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
     }
+  });
 });
 
+// Pop effect untuk edu-box
 function attachClickPop() {
     const boxes = document.querySelectorAll('.edu-box');
     boxes.forEach(box => {
@@ -480,7 +475,7 @@ function attachClickPop() {
 }
 attachClickPop();
 
-
+// Falling emojis
 const numEmoji = 10;
 for(let i=0;i<numEmoji;i++){
     const emoji = document.createElement('div');
@@ -506,6 +501,3 @@ for(let i=0;i<numEmoji;i++){
     }
     setTimeout(fall, Math.random()*2000);
 }
-</script>
-</body>
-</html>
