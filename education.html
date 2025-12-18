@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EDUCATION</title>
 
-<!-- Fonts -->
 <link href="https://fonts.cdnfonts.com/css/bainsley" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/itccheltenham-lt-bookcond" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/distant-galaxy" rel="stylesheet">
@@ -58,11 +57,18 @@ body {
     border-bottom:2px solid transparent;
     text-decoration:none;
 }
-.nav-item:hover { background-color:#89C1D2; }
-.nav-item.active { font-weight:bold; background-color:#89C1D2; }
+.nav-item:hover { 
+    background-color:#89C1D2; 
+}
+.nav-item.active { 
+    font-weight:bold; 
+    background-color:#89C1D2;
+}
 
-
-.dropdown { position: relative; display: inline-block; }
+.dropdown { 
+    position: relative; 
+    display: inline-block; 
+}
 .dropdown-content {
     display: none;
     position: absolute;
@@ -83,8 +89,13 @@ body {
     font-size:30px;
     transition: all 0.3s ease;
 }
-.dropdown-content a:hover { background-color:#D9F1FA; transform: scale(1.05); }
-.dropdown:hover .dropdown-content { display:block; }
+.dropdown-content a:hover { 
+    background-color:#D9F1FA; 
+    transform: scale(1.05);
+}
+.dropdown:hover .dropdown-content { 
+    display:block;
+}
 
 .header-img {
     width:100%;
@@ -137,9 +148,18 @@ body {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.edu-img { width:180px; height:180px; object-fit:cover; margin:10px auto; border-radius:50px; box-shadow:0 8px 15px rgba(0,0,0,0.25); transition: transform 0.3s; }
-.edu-img:hover { transform: scale(1.05); }
-
+.edu-img {
+    width:180px; 
+    height:180px; 
+    object-fit:cover;
+    margin:10px auto;
+    border-radius:50px; 
+    box-shadow:0 8px 15px rgba(0,0,0,0.25);
+    transition: transform 0.3s;
+}
+.edu-img:hover { 
+    transform: scale(1.05); 
+}
 
 .edu-table {
     width: 90%;
@@ -160,7 +180,6 @@ body {
     background-color: #89C1D2;
 }
 
-
 .edu-box h2 {
     font-family: 'Bainsley', sans-serif;
     font-size: 28px;
@@ -174,7 +193,6 @@ body {
     text-align: justify;
 }
 
-
 .edu-box ul {
     list-style: disc;
     padding-left:20px;
@@ -184,7 +202,6 @@ body {
 @keyframes fadeInUp { from { transform: translateY(30px); opacity:0; } to { transform: translateY(0); opacity:1; } }
 @keyframes zoomIn { from { transform: scale(0.8); opacity:0; } to { transform: scale(1); opacity:1; } }
 
-
 .my-skills-grid .edu-box {
     transition: transform 0.4s ease, box-shadow 0.4s ease, z-index 0.4s ease;
 }
@@ -193,7 +210,6 @@ body {
     box-shadow: 0 40px 50px rgba(0,0,0,0.5);
     z-index: 20;
 }
-
 
 .edu-emoji {
     position: fixed;
@@ -208,24 +224,58 @@ body {
 
 @media (max-width: 768px) {
 
-  .navbar { font-size: 35px; flex-direction: column; }
+  .navbar { 
+      font-size: 35px;
+      flex-direction: column; 
+  }
 
-  .dropdown-content a { font-size: 20px; padding: 10px 12px; }
+  .dropdown-content a { 
+      font-size: 20px;
+      padding: 10px 12px;
+  }
 
-  .header-img { height: 25vh; }
+  .header-img {
+      height: 25vh;
+  }
 
-  .edu-grid, .my-skills-grid { grid-template-columns: repeat(1, 1fr) !important; }
+  .edu-grid, .my-skills-grid {
+      grid-template-columns: repeat(1, 1fr) !important;
+  }
 
-  .edu-box { width: 90%; margin: 0 auto; }
+  .edu-box {
+      width: 90%;
+      margin: 0 auto; 
+  }
 
-  .edu-table { font-size: 14px; width: 100%; }
+  .edu-table {
+      font-size: 14px; 
+      width: 100%;
+  }
 
-  .edu-container { padding: 10px; margin: 10px auto; }
+  .edu-container {
+      padding: 10px; 
+      margin: 10px auto;
+  }
 }
 
 </style>
 </head>
 <body>
+<audio src="bgmusic.mp3" autoplay loop></audio>
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+btn.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    btn.textContent = "🔊";
+  } else {
+    music.pause();
+    btn.textContent = "🔇";
+  }
+});
+</script>
 
 <div class="navbar">
   <div class="nav-item" data-link="index.html">WELCOME PAGE</div>
@@ -333,7 +383,6 @@ body {
     </div>
 </div>
 
-
 <div id="skills-experiences" class="edu-container">
     <h1>EXPERIENCES</h1>
 
@@ -347,8 +396,7 @@ body {
         <p>🦋20 March 2023 - 30 September 2023</p><br>
     </div>
 
-   <div class="edu-box"
-     onclick="window.open('https://www.google.com/maps/place/Pejabat+PTPTN+Jasin/@2.2788529,102.3935323,17z/data=!3m1!4b1!4m6!3m5!1s0x31d1e7ad6a9b0941:0x3327188e87cf8868!8m2!3d2.2788529!4d102.3935323!16s%2Fg%2F11d_f1v9dn?entry=ttu','_blank')">
+   <div class="edu-box" onclick="window.open('https://www.google.com/maps/place/Pejabat+PTPTN+Jasin/@2.2788529,102.3935323,17z/data=!3m1!4b1!4m6!3m5!1s0x31d1e7ad6a9b0941:0x3327188e87cf8868!8m2!3d2.2788529!4d102.3935323!16s%2Fg%2F11d_f1v9dn?entry=ttu','_blank')">
     <h2>CAHAYA RK ENTERPRISE</h2>
      <h3>Click image for location:</h3>
     <img src="crk.jpg" class="edu-img"><br><br>
@@ -427,10 +475,6 @@ body {
         <tr><td>8:30-9:00pm</td><td>Prayer & recite Quran</td></tr>
         <tr><td>9:00-10:00pm</td><td>continue study</td></tr>
         <tr><td>10:00-6:00am</td><td>Sleep</td></tr>
-
-
- 
-
     </table>
 </div>
 
@@ -494,3 +538,4 @@ for(let i=0;i<numEmoji;i++){
 </script>
 </body>
 </html>
+
