@@ -19,16 +19,47 @@ body {
     overflow-x: hidden;
 }
 
-.page-wrapper { min-height: 100vh; opacity: 0; animation: pageFadeIn 1.3s ease forwards; }
+.page-wrapper { 
+    min-height: 100vh;
+    opacity: 0; 
+    animation: pageFadeIn 1.3s ease forwards;
+}
 @keyframes pageFadeIn { from {opacity:0; transform:translateY(25px);} to {opacity:1; transform:translateY(0);} }
 
-.navbar { display:flex; justify-content: space-around; background-color:#D9F1FA; padding:15px; position: sticky; top:0; z-index:1000; flex-wrap: wrap; }
-.nav-item { font-size:60px; cursor:pointer; padding:10px; border-radius:20px; transition:0.3s; }
-.nav-item:hover, .nav-item.active { background-color:#89C1D2; }
+.navbar { 
+    display:flex;
+    justify-content: space-around;
+    background-color:#D9F1FA; 
+    padding:15px; 
+    position: sticky;
+    top:0; 
+    z-index:1000;
+    flex-wrap: wrap;
+}
+.nav-item { 
+    font-size:60px; 
+    cursor:pointer; 
+    padding:10px;
+    border-radius:20px; 
+    transition:0.3s; 
+}
+.nav-item:hover, .nav-item.active { 
+    background-color:#89C1D2; 
+}
 
-.header-img { width:100%; height:35vh; object-fit:cover; }
+.header-img { 
+    width:100%;
+    height:35vh; 
+    object-fit:cover; 
+}
 
-.page-title { text-align:center; font-family:'Distant Galaxy', sans-serif; font-size:80px; margin:40px 0; color:#2F4F75; }
+.page-title {
+    text-align:center;
+    font-family:'Distant Galaxy', sans-serif; 
+    font-size:80px; 
+    margin:40px 0;
+    color:#2F4F75;
+}
 
 .row-photos {
     display: flex;
@@ -37,11 +68,38 @@ body {
     gap: 20px;
     padding: 20px;
 }
-.big-photo-wrapper { position: relative; }
-.big-photo { width:150px; height:150px; border-radius:50%; object-fit:cover; cursor:pointer; box-shadow:0 8px 18px rgba(0,0,0,0.15); transition:0.3s; }
-.big-photo:hover { transform: scale(1.08) translateY(-5px); }
-.big-photo-popup { position:absolute; bottom:170px; left:50%; transform:translateX(-50%); background: rgba(137,193,210,0.9); color:#fff; padding:8px 15px; border-radius:15px; font-family:'Bainsley', sans-serif; font-size:16px; opacity:0; transition:0.3s ease; }
-.big-photo-wrapper:hover .big-photo-popup { opacity:1; }
+.big-photo-wrapper { 
+    position: relative;
+}
+.big-photo { 
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover; 
+    cursor:pointer; 
+    box-shadow:0 8px 18px rgba(0,0,0,0.15); 
+    transition:0.3s;
+}
+.big-photo:hover { 
+    transform: scale(1.08) translateY(-5px);
+}
+.big-photo-popup { 
+    position:absolute; 
+    bottom:170px;
+    left:50%;
+    transform:translateX(-50%); 
+    background: rgba(137,193,210,0.9); 
+    color:#fff; 
+    padding:8px 15px; 
+    border-radius:15px; 
+    font-family:'Bainsley', sans-serif; 
+    font-size:16px; 
+    opacity:0; 
+    transition:0.3s ease; 
+}
+.big-photo-wrapper:hover .big-photo-popup {
+    opacity:1; 
+}
 
 .side-container {
     display: flex;
@@ -104,9 +162,21 @@ body {
     text-align: center;
 }
 
-.cat-img { position:absolute; top:-100px; right:-20px; width:110px; transform:rotate(280deg); }
+.cat-img { 
+    position:absolute;
+    top:-100px; 
+    right:-20px; 
+    width:110px;
+    transform:rotate(280deg); 
+}
 
-.cat-snow { position:fixed; top:-50px; pointer-events:none; z-index:9999; animation:swing 3s ease-in-out infinite alternate; }
+.cat-snow {
+    position:fixed; 
+    top:-50px;
+    pointer-events:none; 
+    z-index:9999; 
+    animation:swing 3s ease-in-out infinite alternate; 
+}
 @keyframes swing { from {transform:translateX(-10px) rotate(-5deg);} to {transform:translateX(10px) rotate(5deg);} }
 
 @media (max-width: 900px) {
@@ -176,7 +246,6 @@ body {
 <img src="mycat.jpeg" class="header-img">
 <h1 class="page-title">ABOUT ME</h1>
 
-
 <div class="row-photos">
   <div class="big-photo-wrapper"><img src="bromo.jpeg" class="big-photo"><div class="big-photo-popup">Mount Bromo</div></div>
   <div class="big-photo-wrapper"><img src="jakarta.jpeg" class="big-photo"><div class="big-photo-popup">Jakarta</div></div>
@@ -217,7 +286,6 @@ document.querySelectorAll('[data-link]').forEach(el=>{
   el.onclick=()=>location.href=el.dataset.link;
 });
 
-
 for(let i=0;i<10;i++){
   const cat=document.createElement('div');
   cat.className='cat-snow';
@@ -241,13 +309,13 @@ for(let i=0;i<10;i++){
   fall();
 }
 
-
 document.getElementById('bgMusic').volume = 0.5; 
 </script>
 
 </div>
 </body>
 </html>
+
 
 
 
