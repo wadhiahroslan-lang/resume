@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<title>MUSIC</title>
+
+<link href="https://fonts.cdnfonts.com/css/distant-galaxy" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/bainsley" rel="stylesheet">
+
+<style>
+@font-face {
+    font-family: 'Brownies';
+    src: url('Brownies.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    font-family: 'Brownies', Arial, sans-serif;
+    background: linear-gradient(270deg, #D9F1FA, #89C1D2, #2F4F75);
+    background-size: 600% 600%;
+    color: #040B38;
+    padding-bottom: 80px;
+    animation: gradientShift 15s ease infinite;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #D9F1FA;
+    padding: 15px;
+    flex-wrap: wrap;
+    font-size:60px;
+    animation: slideInDown 1.5s ease-out;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-item {
+    color: #040B38;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-item:hover {
+    background-color: #89C1D2;
+}
+
+.nav-item.active {
+    background-color: #89C1D2;
+    font-weight: bold;
+}
+
+.header-img {
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+    margin-top: -10px;
+    animation: zoomIn 2s ease-in-out;
+}
+
+h1.music-title-page {
+    text-align: center;
+    font-family: 'Distant Galaxy', sans-serif;
+    font-size: 100px;
+    margin-top: 30px;
+    color: #2F4F75;
+    animation: glowPulse 3s infinite, slideInDown 1.5s ease-out;
+}
+
+.music-grid {
+    width: 90%;
+    margin: 30px auto 60px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding-bottom: 50px;
+    perspective: 1200px;
+}
+
+.music-card-wide {
+    background: rgba(225, 244, 251, 0.9);
+    border: 2px solid #89C1D2;
+    padding: 20px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    backdrop-filter: blur(12px);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+    animation: floatCard 6s ease-in-out infinite, rotateIn 1.5s ease;
+}
+
+.music-card-wide:hover {
+    transform: translateY(-15px) rotateX(5deg) rotateY(5deg) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35), 0 0 25px rgba(137,193,210,0.6);
+}
+
+.music-title {
+    font-size: 42px;
+    margin: 5px 0 0 0;
+}
+
+.music-artist {
+    font-size: 32px;
+    margin-bottom: 12px;
+    opacity: 0.8;
+}
+
+.emoji-fly {
+    position: fixed;
+    top: -50px; 
+    pointer-events: none;
+    z-index: 9999;
+    user-select: none;
+    font-size: 30px;
+}
+
+@keyframes floatCard {
+    0% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+    50% { transform: translateY(-8px) rotateX(2deg) rotateY(-2deg); }
+    100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes rotateIn {
+    from { transform: rotateY(90deg); opacity: 0; }
+    to { transform: rotateY(0deg); opacity: 1; }
+}
+
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 10px #89C1D2; }
+    50% { text-shadow: 0 0 25px #2F4F75; }
+    100% { text-shadow: 0 0 10px #89C1D2; }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+
+  .navbar { font-size: 30px; flex-direction: column; align-items: center; }
+
+  .header-img { height: 25vh; }
+
+  h1.music-title-page { font-size: 50px; margin-top: 20px; }
+
+  .music-grid { grid-template-columns: 1fr; gap: 25px; }
+
+  .music-card-wide { padding: 15px; }
+
+  .music-title { font-size: 28px; }
+  .music-artist { font-size: 20px; }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <a class="nav-item" href="index.html">WELCOME PAGE</a>
+  <a class="nav-item" href="myself.html">MYSELF</a>
+  <a class="nav-item" href="education.html">EDUCATION</a>
+  <a class="nav-item" href="travel.html">TRAVEL</a>
+  <a class="nav-item active" href="music.html">MUSIC</a>
+  <a class="nav-item" href="familyme.html">LOVELY FAMILY</a>
+  <a class="nav-item" href="gallery.html">GALLERY</a>
+</div>
+
+<img src="catmusic.jpeg" class="header-img">
+
+<h1 class="music-title-page">My Hits Music</h1>
+
+<div class="music-grid">
+
+    <div class="music-card-wide">
+        <div class="music-title">Menjaga Jodoh Orang Lain</div>
+        <div class="music-artist">Ara Johari</div>
+        <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/2CneKWpjKErzqZhHID0avV?utm_source=generator" 
+            width="100%" height="352" frameBorder="0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <div class="music-card-wide">
+        <div class="music-title">Bidadari</div>
+        <div class="music-artist">Lela</div>
+        <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/2gs2fqeVOTsP46Hppy8giE?utm_source=generator" 
+            width="100%" height="352" frameBorder="0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <div class="music-card-wide">
+        <div class="music-title">Just Give Me A Reason</div>
+        <div class="music-artist">Pink</div>
+        <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/1mKXFLRA179hdOWQBwUk9e?utm_source=generator" 
+            width="100%" height="352" frameBorder="0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+</div>
+
+<script>
+
+const numEmojis = 10;
+for(let i=0; i<numEmojis; i++){
+    const em = document.createElement('div');
+    em.className = 'emoji-fly';
+    em.textContent = '🎧';
+    em.style.left = Math.random() * window.innerWidth + 'px';
+    em.style.fontSize = (20 + Math.random()*40) + 'px';
+    em.style.opacity = Math.random()*0.8 + 0.2;
+    document.body.appendChild(em);
+
+    const fly = () => {
+        const duration = 3 + Math.random()*5; 
+        em.style.transition = `top ${duration}s linear, left ${duration}s linear`;
+        em.style.top = window.innerHeight + 'px';
+        em.style.left = Math.random() * window.innerWidth + 'px';
+
+        setTimeout(() => {
+            em.style.transition = 'none';
+            em.style.top = '-50px';
+            em.style.left = Math.random() * window.innerWidth + 'px';
+            setTimeout(fly, 50);
+        }, duration*1000);
+    };
+    setTimeout(fly, Math.random()*2000);
+}
+</script>
+
+</body>
+</html>

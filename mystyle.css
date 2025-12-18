@@ -1,0 +1,66 @@
+<style>
+body {
+    margin: 0;
+      font-family: 'Brownies', Arial, sans-serif;
+      background-color: #D9F1FA;
+
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #D9F1FA;
+    padding: 15px;
+    flex-wrap: wrap;
+    font-size: 75px; /* saiz font baru supaya semua muat */
+}
+
+.nav-item {
+    color: #040B38;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: color 0.3s ease, background-color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-item:hover {
+    background-color: #89C1D2;
+    border-bottom: 2px solid rgba(217, 241, 250, 0.7);
+}
+
+.nav-item.active {
+    background-color: #89C1D2;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(217, 241, 250, 0.7);
+}
+</style>
+
+<div class="navbar">
+  <div class="nav-item active" data-link="welcomepage.html">WELCOME PAGE</div>
+  <div class="nav-item active" data-link="myself.html">MYSELF</div>
+  <div class="nav-item active" data-link="education.html">EDUCATION</div>
+  <div class="nav-item active" data-link="travel.html">TRAVEL</div>
+  <div class="nav-item active" data-link="music.html">MUSIC</div>
+    <div class="nav-item active" data-link="familyme.html">LOVELY FAMILY</div>
+  <div class="nav-item active" data-link="gallery.html">GALLERY</div>
+</div>
+
+<script>
+// Navbar click: redirect
+document.querySelectorAll('.nav-item[data-link]').forEach(el => {
+    el.addEventListener('click', () => {
+        const link = el.getAttribute('data-link');
+        if(link) window. location.href = link;
+    });
+});
+
+// Active page highlight
+const currentPage = window.location.pathname.split("/").pop();
+document.querySelectorAll('.nav-item').forEach(item => {
+    if(item.getAttribute('data-link') === currentPage){
+        item.classList.add('active');
+    }
+});
+</script>
