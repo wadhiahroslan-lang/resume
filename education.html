@@ -5,7 +5,6 @@
 
 <title>EDUCATION</title>
 
-<!-- Fonts -->
 <link href="https://fonts.cdnfonts.com/css/bainsley" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/itccheltenham-lt-bookcond" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/distant-galaxy" rel="stylesheet">
@@ -14,6 +13,20 @@
 @font-face {
     font-family: 'Brownies';
     src: url('Brownies.ttf') format('truetype');
+}
+
+.footer {
+  background-color: #040B38;       
+  color: #00ffff;               
+  text-align: center;           
+  padding: 20px 0;
+  font-family: 'DistantGalaxy', sans-serif;
+  letter-spacing: 2px;
+  font-size: 14px;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 body {
@@ -507,11 +520,16 @@ for(let i=0;i<numEmoji;i++){
     }
     setTimeout(fall, Math.random()*2000);
 }
-    <footer>
-  <p>© 2025 Insyirah Roslan. All rights reserved.</p>
+  <footer class="footer">
+  <p>© <span id="2025"></span> Insyirah Roslan. All rights reserved.</p>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </script>
 </body>
 </html>
+
 
