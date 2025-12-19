@@ -107,12 +107,11 @@ body {
     margin-top:-10px;
     animation: fadeInUp 1.5s ease;
 }
-.edu-grid {
-    display:grid;
-    justify-items:center;
+.edu-grid, .my-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
     column-gap: 20px;
     row-gap: 20px;
-   grid-template: repeat(4,1fr);
 }
 
 .edu-box {
@@ -214,7 +213,12 @@ body {
 
   .header-img { height: 25vh; }
 
-  .edu-grid, .my-skills-grid { grid-template-columns:1fr; }
+ @media (max-width: 768px) {
+  .edu-grid, .my-skills-grid { 
+      grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
 
   .edu-box { width: 100%; margin: 0 auto; }
 
@@ -263,7 +267,8 @@ btn.addEventListener("click", () => {
 
 <div id="education" class="edu-container">
     <h1>MY EDUCATION</h1>
-    <div class="edu-grid education-grid" style="grid-template-columns: repeat(4,1fr);">
+   <div class="edu-grid education-grid">
+
         <div class="edu-box">
             <h2>TADIKA KEMAS SELANDAR</h2><br><br>
             <img src="tadika.jpeg" class="edu-img">
@@ -511,6 +516,4 @@ for(let i=0;i<numEmoji;i++){
 </script>
 </body>
 </html>
-
-
 
