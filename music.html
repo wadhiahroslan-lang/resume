@@ -176,13 +176,14 @@ h1.music-title-page {
 
   .music-title { font-size: 28px; }
   .music-artist { font-size: 20px; }
-
+}
 }
 @media (max-width: 600px) {
   footer {
     font-size: 14px;
     padding: 10px 5px;
   }
+}
 </style>
 </head>
 
@@ -266,11 +267,18 @@ for(let i=0; i<numEmojis; i++){
     };
     setTimeout(fly, Math.random()*2000);
 }
+document.getElementById('bgMusic').volume = 0.5; // 50% volume
 </script>
-}
 <footer class="footer">
   <p>© <span id="2025"></span> Insyirah Roslan. All rights reserved.</p>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</div>
 </body>
 </html>
+
 
