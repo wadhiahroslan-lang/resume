@@ -175,7 +175,7 @@ body {
 </style>
 </head>
 <body>
-<audio src="bgmusic2.mp3" autoplay loop></audio>
+<audio src="bgmusic2.mp3"loop></audio>
 <script>
 const music = document.getElementById("bgMusic");
 const btn = document.getElementById("musicBtn");
@@ -190,6 +190,11 @@ btn.addEventListener("click", () => {
   }
 });
 </script>
+<button id="musicBtn"
+onclick="toggleMusic()"
+style="position:fixed; bottom:20px; right:20px; font-size:30px; z-index:9999;">
+🔊
+</button>
 
 <div class="page-wrapper">
 <div class="navbar">
@@ -277,10 +282,38 @@ document.getElementById('bgmusic2').volume = 0.1;
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+const video = document.querySelector("video");
+
+// setting music
+music.volume = 0.1;        // perlahan
+music.playbackRate = 0.9; // slow sikit
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play();
+    btn.textContent = "🔊";
+  } else {
+    music.pause();
+    btn.textContent = "🔇";
+  }
+}
+
+// bila video play → music auto pause
+video.addEventListener("play", () => {
+  if (!music.paused) {
+    music.pause();
+    btn.textContent = "🔇";
+  }
+});
+</script>
 
 </div>
 </body>
 </html>
+
 
 
 
