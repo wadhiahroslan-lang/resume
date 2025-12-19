@@ -138,12 +138,12 @@ h1.gallery-title-page {
 
 @media (max-width: 1024px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(1, 1fr); } }
-}
 @media (max-width: 600px) {
   footer {
     font-size: 14px;
     padding: 10px 5px;
   }
+}
 @keyframes fadeZoomRotate { 0% {opacity:0; transform: scale(0.7) rotate(-5deg);} 50% {opacity:0.5; transform: scale(1.05) rotate(3deg);} 100% {opacity:1; transform: scale(1) rotate(0deg);} }
 @keyframes gradientBG { 0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;} }
 @keyframes navbarFadeSlide { to{ opacity:1; transform: translateY(0);} }
@@ -235,12 +235,17 @@ for(let i=0;i<numHearts;i++){
     setTimeout(fall, Math.random()*2000);
 }
 </script>
-}
 <footer class="footer">
   <p>© <span id="2025"></span> Insyirah Roslan. All rights reserved.</p>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
+
 
 
 
