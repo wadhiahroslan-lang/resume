@@ -15,18 +15,13 @@
     src: url('Brownies.ttf') format('truetype');
 }
 
-.footer {
-  background-color: #040B38;       
-  color: #00ffff;               
-  text-align: center;           
-  padding: 20px 0;
-  font-family: 'DistantGalaxy', sans-serif;
-  letter-spacing: 2px;
-  font-size: 14px;
-
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+footer{
+background-color:#040B38;
+color:white;
+clear:both;
+text-align:center;
+padding:5px;
+font:courier;
 }
 
 body {
@@ -527,9 +522,12 @@ for(let i=0;i<numEmoji;i++){
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
+<footer class="footer">
+  <p>© <span id="2025"></span> Insyirah Roslan. All rights reserved.</p>
+</footer>
 </script>
 </body>
 </html>
+
 
 
