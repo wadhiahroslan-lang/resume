@@ -192,12 +192,12 @@ h1.section-title {
         font-size: 18px; 
     }
 }
-}
 @media (max-width: 600px) {
   footer {
     font-size: 14px;
     padding: 10px 5px;
   }
+}
 @keyframes fadeInUp { from { transform: translateY(30px); opacity:0; } to { transform: translateY(0); opacity:1; } }
 @keyframes zoomIn { from { transform: scale(0.8); opacity:0; } to { transform: scale(1); opacity:1; } }
 @keyframes glowPulse { 0% { text-shadow:0 0 10px #89C1D2; } 50% { text-shadow:0 0 25px #2F4F75; } 100% { text-shadow:0 0 10px #89C1D2; } }
@@ -325,12 +325,17 @@ document.querySelectorAll('.family-card').forEach(card=>{
     });
 });
 </script>
-}
 <footer class="footer">
-  <p>© <span id="2025"></span> Insyirah Roslan. All rights reserved.</p>
+  <p>© <span id="year"></span> Insyirah Roslan. All rights reserved.</p>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
+
 
 
 
