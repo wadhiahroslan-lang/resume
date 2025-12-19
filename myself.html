@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MYSELF</title>
+
+<link href="https://fonts.cdnfonts.com/css/distant-galaxy" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/bainsley" rel="stylesheet">
+
+<style
+@font-face { font-family: 'DistantGalaxy'; src: url('fonts/DistantGalaxy.ttf') format('truetype');
+}
+
+footer {
+  background-color: #040B38;
+  color: white;
+  text-align: center;
+  padding: 10px 5px;
+  font-family: 'Bainsley', sans-serif;
+  font-size: 25px;
+  width: 100%;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Bainsley', Arial, sans-serif;
+    background-color: #D9F1FA;
+    color: #040B38;
+    overflow-x: hidden;
+}
+
+.page-wrapper { min-height: 100vh; opacity: 0; animation: pageFadeIn 1.3s ease forwards; }
+@keyframes pageFadeIn { from {opacity:0; transform:translateY(25px);} to {opacity:1; transform:translateY(0);} }
+
+.navbar { display:flex; justify-content: space-around; background-color:#D9F1FA; padding:15px; position: sticky; top:0; z-index:1000; flex-wrap: wrap; }
+.nav-item { font-size:60px; cursor:pointer; padding:10px; border-radius:20px; transition:0.3s; }
+.nav-item:hover, .nav-item.active { background-color:#89C1D2; }
+
+.header-img { width:100%; height:35vh; object-fit:cover; }
+
+.page-title { text-align:center; font-family:'Distant Galaxy', sans-serif; font-size:80px; margin:40px 0; color:#2F4F75; }
+
+.row-photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.big-photo-wrapper { position: relative; }
+.big-photo { width:150px; height:150px; border-radius:50%; object-fit:cover; cursor:pointer; box-shadow:0 8px 18px rgba(0,0,0,0.15); transition:0.3s; }
+.big-photo:hover { transform: scale(1.08) translateY(-5px); }
+.big-photo-popup { position:absolute; bottom:170px; left:50%; transform:translateX(-50%); background: rgba(137,193,210,0.9); color:#fff; padding:8px 15px; border-radius:15px; font-family:'Bainsley', sans-serif; font-size:16px; opacity:0; transition:0.3s ease; }
+.big-photo-wrapper:hover .big-photo-popup { opacity:1; }
+
+.side-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: nowrap;
+    max-width: 1500px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.video-container {
+    flex: 1;
+    min-width: 350px;
+    max-width: 500px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
+    transition:0.3s ease;
+}
+.video-container:hover { transform: translateY(-10px); box-shadow:0 15px 35px rgba(0,0,0,0.25); }
+.video-container h2 { 
+   font-family:'Distant Galaxy', sans-serif;
+   color:#2F4F75; 
+   margin-bottom:20px;
+ }
+
+.intro-video { 
+    width: 450px; 
+    height:550px; 
+    object-fit: contain; 
+    border-radius: 15px; 
+    background-color:#000; 
+    display:block; 
+    margin:0 auto; 
+}
+
+.myself-container {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    transition:0.3s ease;
+    position: relative;
+}
+
+.myself-container:hover { transform: translateY(-10px); }
+.myself-container p { font-family:'Bainsley', sans-serif; font-size:20px; text-align:justify; }
+
+.side-container h2 {
+    font-family: 'Distant Galaxy', sans-serif;
+    color: #2F4F75;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cat-snow { position:fixed; top:-50px; pointer-events:none; z-index:9999; animation:swing 3s ease-in-out infinite alternate; }
+@keyframes swing { from {transform:translateX(-10px) rotate(-5deg);} to {transform:translateX(10px) rotate(5deg);} }
+
+@media (max-width: 900px) {
+ 
+    .side-container {
+        flex-direction: column;
+        gap: 20px;
+        margin: 20px auto;
+        max-width: 90%;
+        padding: 0 10px;
+    }
+
+    .video-container,
+    .myself-container {
+        max-width: 100%;
+        min-width: auto;
+        padding: 10px;
+    }
+
+
+    .intro-video {
+        width: 100%;
+        height: auto;
+    }
+    .big-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .navbar .nav-item {
+        font-size: 40px;
+        padding: 8px;
+    }
+
+    .page-title {
+        font-size: 50px;
+        margin: 30px 0;
+    }
+
+    .side-container h2 {
+        font-size: 26px;
+    }
+
+    .myself-container img[alt="Selandar Map"] {
+        width: 150px;
+        height: auto;
+    }
+}
+@media (max-width: 600px) {
+  footer {
+    font-size: 14px;
+    padding: 10px 5px;
+  }
+}
+
+</style>
+</head>
+<body>
+<audio src="bgmusic2.mp3" autoplay loop></audio>
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+btn.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    btn.textContent = "🔊";
+  } else {
+    music.pause();
+    btn.textContent = "🔇";
+  }
+});
+</script>
+
+<div class="page-wrapper">
+<div class="navbar">
+  <div class="nav-item" data-link="index.html">WELCOME PAGE</div>
+  <div class="nav-item active" data-link="myself.html">MYSELF</div>
+  <div class="nav-item" data-link="education.html">EDUCATION</div>
+  <div class="nav-item" data-link="travel.html">TRAVEL</div>
+  <div class="nav-item" data-link="music.html">MUSIC</div>
+  <div class="nav-item" data-link="familyme.html">LOVELY FAMILY</div>
+  <div class="nav-item" data-link="gallery.html">GALLERY</div>
+</div>
+
+<img src="mycat.jpeg" class="header-img">
+<h1 class="page-title">ABOUT ME</h1>
+
+<div class="row-photos">
+  <div class="big-photo-wrapper"><img src="bromo.jpeg" class="big-photo"><div class="big-photo-popup">Mount Bromo</div></div>
+  <div class="big-photo-wrapper"><img src="jakarta.jpeg" class="big-photo"><div class="big-photo-popup">Jakarta</div></div>
+  <div class="big-photo-wrapper"><img src="kimono.jpg" class="big-photo"><div class="big-photo-popup">Japan</div></div>
+  <div class="big-photo-wrapper"><img src="brunei.jpg" class="big-photo"><div class="big-photo-popup">Brunei</div></div>
+  <div class="big-photo-wrapper"><img src="korea.jpeg" class="big-photo"><div class="big-photo-popup">Korea</div></div>
+  <div class="big-photo-wrapper"><img src="medan.jpg" class="big-photo"><div class="big-photo-popup">Medan</div></div>
+  <div class="big-photo-wrapper"><img src="batam.jpeg" class="big-photo"><div class="big-photo-popup">Batam</div></div>
+  <div class="big-photo-wrapper"><img src="sg.jpg" class="big-photo"><div class="big-photo-popup">Singapore</div></div>
+</div>
+
+<div class="side-container">
+  <!-- VIDEO -->
+  <div class="video-container">
+    <h2>LIFE 2025 RECAP</h2>
+    <video controls class="intro-video">
+      <source src="video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="myself-container">
+    <h2> ABOUT ME</h2>
+    <p><p> My name is Nur Insyirah Wadhiah Binti Roslan. I love cats so much. Then, my family's members are 6, including me, and I'm the youngest. The gap between my sister and me is 10years and above. </p>
+    <p>I love to take photos very much. I had a lot of cats before then; now I only have 8. I'm so glad to have my family now, even though I never tell them how much I love them. I'm very grateful and appreciate them. </p>
+    <p> 🎂 : 2nd June 2005</p>
+    <p> 👧 : 20 years old </p>
+    <p> 📍: Melaka </p>
+    <p>Contact Me: <a href="mailto:wadhiahroslan@gmail.com" text-decoration:underline;">wadhiahroslan@gmail.com</a></p>
+    <a href="https://www.google.com/maps/place/Selandar,+Melaka,+Malaysia" target="_blank">
+        <img src="maps.jpeg" alt="Selandar Map" style="width:200px; height:auto; border-radius:15px; cursor:pointer;">
+    </a>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('[data-link]').forEach(el=>{
+  el.onclick=()=>location.href=el.dataset.link;
+});
+
+
+for(let i=0;i<10;i++){
+  const cat=document.createElement('div');
+  cat.className='cat-snow';
+  cat.textContent='🐈';
+  cat.style.left=Math.random()*window.innerWidth+'px';
+  cat.style.fontSize=20+Math.random()*30+'px';
+  cat.style.opacity=Math.random()*0.6+0.4;
+  document.body.appendChild(cat);
+
+  const fall=()=> {
+    const duration=5+Math.random()*5;
+    cat.style.transition=`top ${duration}s linear`;
+    cat.style.top=window.innerHeight+'px';
+    setTimeout(()=>{
+      cat.style.transition='none';
+      cat.style.top='-50px';
+      cat.style.left=Math.random()*window.innerWidth+'px';
+      setTimeout(fall,50);
+    }, duration*1000);
+  }
+  fall();
+}
+
+document.getElementById('bgMusic2').volume = 0.2; 
+</script>
+<footer class="footer">
+  <p>© <span id="year"></span> Insyirah Roslan. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</div>
+</body>
+</html>
