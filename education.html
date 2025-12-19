@@ -180,7 +180,6 @@ body {
     text-align: justify;
 }
 
-
 .edu-box ul {
     list-style: disc;
     padding-left:20px;
@@ -236,6 +235,7 @@ body {
 }
 </style>
 </head>
+           
 <body>
 <audio src="bgmusic.mp3" autoplay loop></audio>
 <script>
@@ -252,7 +252,6 @@ btn.addEventListener("click", () => {
   }
 });
 </script>
-
 
 <div class="navbar">
   <div class="nav-item" data-link="index.html">WELCOME PAGE</div>
@@ -518,16 +517,18 @@ for(let i=0;i<numEmoji;i++){
     }
     setTimeout(fall, Math.random()*2000);
 }
-  <footer class="footer">
-  <p>© <span id="2025"></span> Insyirah Roslan. All rights reserved.</p>
+<footer class="footer">
+  <p>© <span id="year"></span> Insyirah Roslan. All rights reserved.</p>
 </footer>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </div>
 </body>
 </html>
+
 
 
 
