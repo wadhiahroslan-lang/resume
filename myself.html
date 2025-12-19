@@ -9,6 +9,22 @@
 
 <style>
 @font-face { font-family: 'Brownies'; src: url('Brownies.ttf') format('truetype'); }
+@font-face { font-family: 'DistantGalaxy'; src: url('fonts/DistantGalaxy.ttf') format('truetype');
+}
+
+.footer {
+  background-color: #040B38;       
+  color: #00ffff;               
+  text-align: center;            
+  padding: 20px 0;
+  font-family: 'DistantGalaxy', sans-serif;
+  letter-spacing: 2px;
+  font-size: 14px;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
 body {
     margin: 0;
@@ -253,13 +269,19 @@ for(let i=0;i<10;i++){
 // Set volume for background music
 document.getElementById('bgMusic').volume = 0.; // 50% volume
 </script>
-<footer>
-  <p>© 2025 Insyirah Roslan. All rights reserved.</p>
+<footer class="footer">
+  <p>© <span id="2025"></span> Insyirah Roslan. All rights reserved.</p>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 
 </div>
 </body>
 </html>
+
 
 
 
