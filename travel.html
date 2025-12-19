@@ -198,8 +198,6 @@ btn.addEventListener("click", () => {
 });
 </script>
 
-
-
 <div class="navbar">
   <a class="nav-item" href="index.html">WELCOME PAGE</a>
   <a class="nav-item" href="myself.html">MYSELF</a>
@@ -262,12 +260,19 @@ for(let i=0;i<numPlanes;i++){
     }
     fall();
 }
+  document.getElementById('bgMusic').volume = 0.5;
 </script>
-}
 <footer class="footer">
   <p>© <span id="2025"></span> Insyirah Roslan. All rights reserved.</p>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
 </body>
 </html>
+
 
 
