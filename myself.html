@@ -12,15 +12,16 @@
 @font-face { font-family: 'DistantGalaxy'; src: url('fonts/DistantGalaxy.ttf') format('truetype');
 }
 
-footer{
-background-color:#040B38;
-color:white;
-clear:both;
-text-align:center;
-padding:5px;
-font-family:'Distant Galaxy', sans-serif;
-font-size: 10px;
+footer {
+  background-color: #040B38;
+  color: white;
+  text-align: center;
+  padding: 15px 5px;
+  font-family: 'Distant Galaxy', sans-serif;
+  font-size: 25px;
+  width: 100%;
 }
+
 
 body {
     margin: 0;
@@ -164,6 +165,12 @@ body {
         height: auto;
     }
 }
+@media (max-width: 600px) {
+  footer {
+    font-size: 14px;
+    padding: 10px 5px;
+  }
+}
 
 </style>
 </head>
@@ -275,6 +282,7 @@ document.getElementById('bgMusic').volume = 0.; // 50% volume
 </div>
 </body>
 </html>
+
 
 
 
