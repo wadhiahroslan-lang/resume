@@ -12,7 +12,15 @@
     font-family: 'Brownies';
     src: url('Brownies.ttf') format('truetype');
 }
-
+footer {
+  background-color: #040B38;
+  color: white;
+  text-align: center;
+  padding: 10px 5px;
+  font-family: 'Bainsley', sans-serif;
+  font-size: 25px;
+  width: 100%;
+}
 body {
     margin: 0;
     font-family: 'Brownies', Arial, sans-serif;
@@ -170,7 +178,11 @@ h1.music-title-page {
   .music-artist { font-size: 20px; }
 
 }
-
+@media (max-width: 600px) {
+  footer {
+    font-size: 14px;
+    padding: 10px 5px;
+  }
 </style>
 </head>
 
@@ -255,6 +267,10 @@ for(let i=0; i<numEmojis; i++){
     setTimeout(fly, Math.random()*2000);
 }
 </script>
-
+}
+<footer class="footer">
+  <p>© <span id="2025"></span> Insyirah Roslan. All rights reserved.</p>
+</footer>
 </body>
 </html>
+
